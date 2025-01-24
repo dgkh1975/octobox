@@ -1,4 +1,5 @@
 require 'pagy/extras/headers'
-Pagy::VARS[:items] = 20
+Pagy::DEFAULT[:limit] = 20
 require 'pagy/extras/overflow'
-Pagy::VARS[:overflow] = :last_page
+Pagy::DEFAULT[:overflow] = :last_page
+require 'pagy/extras/bootstrap'

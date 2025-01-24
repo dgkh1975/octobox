@@ -1,9 +1,6 @@
 # frozen_string_literal: true
-# Simplified version of https://github.com/marcelocf/searrrch/blob/f2825e26/lib/searrrch.rb
 
 class SearchParser
-  OPERATOR_EXPRESSION = /(\-?\w+):[\ 　]?([\w\p{Han}\p{Katakana}\p{Hiragana}\p{Hangul}ー\.\-,\/]+|(["'])(\\?.)*?\3)/
-
   attr_accessor :freetext
   attr_accessor :operators
 
@@ -11,16 +8,25 @@ class SearchParser
     query = query.to_s
     @operators = {}
 
-    offset = 0
-    while (m = OPERATOR_EXPRESSION.match(query, offset))
-      key = m[1].downcase.to_sym
-      value = m[2]
-      offset = m.end(2)
-      @operators[key] ||= []
+    ss = StringScanner.new(query)
 
-      value.split(',').each{ |v| @operators[key] << v }
+    loop do
+      # scan for key
+      ss.scan_until(/([^'"]?\-?\w+):\s?/)
+      if ss.captures
+        key = ss.captures[0].strip.to_sym
+        @operators[key] ||= []
+
+        # scan for value
+        value = ss.scan(/(("|')[^"']+('|")|(\+))|[^"'\s]+/)
+        break if value.nil?
+        value.split(',').each{ |v| @operators[key] << v.strip }
+      else
+        break
+      end
     end
-    @freetext = query[offset, query.length].strip
+
+    @freetext = ss.rest.strip
   end
 
   def [](key)
