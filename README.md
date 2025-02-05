@@ -18,7 +18,6 @@ Octobox helps you manage your GitHub notifications efficiently so you can spend 
 
 ![Screenshot of  Octobox](app/assets/images/screenshot.png)
 
-[![Build Status](https://travis-ci.org/octobox/octobox.svg?branch=master)](https://travis-ci.org/octobox/octobox)
 [![View performance data on Skylight](https://badges.skylight.io/typical/eLvcBBdLmV6k.svg)](https://oss.skylight.io/app/applications/eLvcBBdLmV6k)
 [![Docker](https://img.shields.io/docker/pulls/octoboxio/octobox.svg)](https://hub.docker.com/r/octoboxio/octobox/)
 [![Gitter](https://img.shields.io/gitter/room/octobox/octobox.svg)](https://gitter.im/octobox/octobox)
@@ -37,18 +36,23 @@ Octobox adds an extra "archived" state to each notification so you can mark it a
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
-	- [Install](#install)
-	- [Desktop usage](#desktop-usage)
-	- [Web extension](#web-extension)
-- [Requirements](#requirements)
-- [Keyboard shortcuts](#keyboard-shortcuts)
-- [Contribute](#contribute)
-	- [Vulnerability disclosure](#vulnerability-disclosure)
-	- [Note on Patches/Pull Requests](#note-on-patchespull-requests)
-- [Contribute](#contribute)
-	- [Code of Conduct](#code-of-conduct)
-- [Copyright](#copyright)
+- [Octobox 📮 Untangle your GitHub Notifications.](#octobox--untangle-your-github-notifications)
+	- [Why is this a thing?](#why-is-this-a-thing)
+	- [Table of Contents](#table-of-contents)
+	- [Getting Started](#getting-started)
+		- [Install](#install)
+		- [Desktop usage](#desktop-usage)
+		- [Web extension](#web-extension)
+	- [Requirements](#requirements)
+	- [Viewing comment threads](#viewing-comment-threads)
+	- [Keyboard shortcuts](#keyboard-shortcuts)
+	- [Backers](#backers)
+	- [Sponsors](#sponsors)
+	- [Contribute](#contribute)
+		- [Note on Patches/Pull Requests](#note-on-patchespull-requests)
+		- [Vulnerability disclosure](#vulnerability-disclosure)
+		- [Code of Conduct](#code-of-conduct)
+	- [Copyright](#copyright)
 
 ## Getting Started
 
@@ -70,7 +74,7 @@ This will build a local application (.exe, .app, etc) and put it in your current
 
 ### Web extension
 
-You can also install the cross-browser [Octobox Web Extension](https://github.com/tfrommen/octobox-web-extension). It is available for [Google Chrome](https://chrome.google.com/webstore/detail/octobox-web-extension/efhkcafmbonnomnimilnephjgeccffdn) and [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/octobox-web-extension/), but you can also use it with other browsers that support web extensions.
+You can also install the cross-browser [Octobox Web Extension](https://github.com/tfrommen/octobox-web-extension). It is available for [Google Chrome](https://chromewebstore.google.com/detail/octobox/dpbajpnhgagfneijghelgldegjblinkc) and [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/octobox-web-extension/), but you can also use it with other browsers that support web extensions.
 
 ## Requirements
 
@@ -150,4 +154,4 @@ Please note that this project is released with a [Contributor Code of Conduct](d
 
 ## Copyright
 
-[GNU Affero License](LICENSE.txt) © 2018 [Andrew Nesbitt](https://github.com/andrew).
+[GNU Affero License](LICENSE.txt) © 2021 [Andrew Nesbitt](https://github.com/andrew).

@@ -28,17 +28,16 @@ jobs:
         options: --entrypoint redis-server
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Install dependent libraries
         run: sudo apt-get install libpq-dev
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4.2.0
         with:
-          node-version: 15
+          node-version: 20
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.2
           bundler-cache: true
 
       - name: Run tests
@@ -50,4 +49,4 @@ jobs:
           OCTOBOX_DATABASE_PASSWORD: postgres
           OCTOBOX_DATABASE_USERNAME: octobox
           POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
-        run: bundle exec rake db:create db:migrate test
+        run: bundle exec rails db:test:prepare test
